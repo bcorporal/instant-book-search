@@ -8,7 +8,7 @@ const resolvers = {
       if (context.user) {
         return await User.findOne({ _id: context.user._id})
         .select("-_v -password")
-        .populate('savedBooks');
+        .populate("savedBooks");
       }
       throw new AuthenticationError('Not Logged In')
     },
@@ -21,7 +21,7 @@ const resolvers = {
       return { token, user };
     },
     login: async (parent, { email, password }) => {
-      const user = await User.findOne({ email });
+      const user = await User.findOne({ email: email });
 
       if (!user) {
         throw new AuthenticationError('No user found');

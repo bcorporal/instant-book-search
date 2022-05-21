@@ -16,6 +16,6 @@
     "concurrently": "^5.1.0"
   },
   "dependencies": {
-    "apollo-server-express": "^3.7.0"
+    "concurrently": "^5.1.0"
   }
 }
