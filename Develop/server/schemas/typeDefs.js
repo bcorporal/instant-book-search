@@ -1,25 +1,31 @@
 const { gql } = require("apollo-server-express");
 
 const typeDefs = gql`
-type Book {
+input BookInput {
     authors: [String]
-    description: String
-    bookId: ID
+    description: String!
+    bookId: String!
     image: String
     link: String
-    title: String
+    title: String!
 }
-type User {
-    _id: ID
-    username: String
-    password: String
-    bookCount: Int
-    savedBooks: [Book]
+type Query {
+    me: User
 }
+
 type Auth {
     token: ID!
     user: User
 }
+
+type User { 
+    _id: ID!
+    username: String!
+    email: String
+    bookCount: Int
+    savedBooks: [Book]
+}
+
 input BookInput {
     authors: [String]
     description: String
@@ -27,14 +33,24 @@ input BookInput {
     bookId: String
     image: String
 }
+
+type Book { 
+    bookId: ID!
+    authors: [String]
+    description: String
+    title: String!
+    image: String
+    link: String
+}
+
 type Query {
     user: User
 }
 
 type Mutation {
-    createUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    saveBook(input: BookInput): User
+    addUser(username: String! email: String!, password: String!): Auth
+    saveBook(bookData: BookInput!): User
     removeBook(bookId: ID!): User
   }
 `;

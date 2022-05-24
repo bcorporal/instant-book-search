@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import SearchBooks from './pages/SearchBooks';
 import SavedBooks from './pages/SavedBooks';
 import Navbar from './components/Navbar';
-import { ApolloClient, InMemoryCache, ApolloPovider, createHttpLink } from '@apollo/client';
+import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 
 
@@ -34,20 +34,20 @@ const client = new ApolloClient({
 
 function App() {
   return (
-    <ApolloPovider client={client}>
+    <ApolloProvider client={client}>
     <Router>
       <>
         <Navbar />
         <Switch>
           <Route 
-            exact path='/' component={<SearchBooks />} />
+           path='/' element={<SearchBooks />} />
           <Route 
-            exact path='/saved' component={<SavedBooks />} />
-          <Route render ={() => <h1 className='display-2'>Wrong page!</h1>}/>
+            path='/saved' element={<SavedBooks />} />
+          <Route path ="*" element={<h1 className='display-2'>Wrong page!</h1>}/>
         </Switch>
         </>
     </Router>
-    </ApolloPovider>
+    </ApolloProvider>
   );
 }
 
