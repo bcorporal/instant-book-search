@@ -1,12 +1,14 @@
 # instant-book-search
 
+heroku deployed https://safe-taiga-64098.herokuapp.com/
+
   
 ## Description
-  
-JATE (text-editor) create notes or code snippets with or without an internet connection so that you can reliably retrieve them for later use.
+AS AN avid reader
+I WANT to search for new books to read
+SO THAT I can keep a list of books to purchase
 
-This is a Full Stack single-page application that meets PWA criteria and runs in the browser.  Features a number of data persistence techniques that serve as redundancy in case one of the options is not supported by the browser. 
-
+![Google Book Search](https://user-images.githubusercontent.com/97717660/170423043-90bff009-fa7d-4b5e-95f9-22ce7a07475b.gif)
 
   
   ##Table of Contents
@@ -19,11 +21,7 @@ This is a Full Stack single-page application that meets PWA criteria and runs in
 
 
   ## Installation
-  Fork code, npm run start in intergated terminal.
-
-  or click deployed heroku link, click install button to doanload the app to your desktop.
-
-
+ Run in browser!
 
 
 
@@ -36,7 +34,7 @@ This is a Full Stack single-page application that meets PWA criteria and runs in
   ## Language(s)
   Javascript
 
-  Features express, node, webpack
+ 
   
 
 
