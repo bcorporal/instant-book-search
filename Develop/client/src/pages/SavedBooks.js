@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 import { Jumbotron, Container, Card, CardColumns, Button } from 'react-bootstrap';
 import { useMutation } from "@apollo/client";

@@ -33,7 +33,6 @@ export const SAVE_BOOK = gql`
       savedBooks {
       authors 
       title 
-    } 
       }
     }
   }
